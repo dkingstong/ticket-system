@@ -1,20 +1,14 @@
 import express from 'express'
 import passport from 'passport'
-import Users from '../models/users.js'
-
+import { createUser } from '../controllers/userController'
 
 const router = express.Router()
 
 router.post('/', async(req, res) => {
   const user = req.body;
-  await Users.create({
-    firstName: user.firstName,
-    lastName: user.lastName,
-    email: user.email,
-    hashedPassword: user.password,
-    role: user.role
-  })
-  res.status(200).send('user created successfully')
+  const newUser = await createUser(user)
+  
+  res.status(200).json({newUser})
 })
 
 router.post('/login',

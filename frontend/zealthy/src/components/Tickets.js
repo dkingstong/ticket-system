@@ -56,14 +56,12 @@ export default function Tickets() {
 
   const getTickets = async () => {
     const res = await axios.get('http://localhost:4000/tickets/index')
-    console.log(res)
     const { tickets } = res.data
     setTickets([...tickets])
   }
 
   const handleChange = async (event) => {
-    const res = await axios.put(`http://localhost:4000/tickets/${currentTicket.id}`, {status: event.target.value})
-    console.log('res', res)
+    await axios.put(`http://localhost:4000/tickets/${currentTicket.id}`, {status: event.target.value})
     window.location.reload(false);
   }
 
