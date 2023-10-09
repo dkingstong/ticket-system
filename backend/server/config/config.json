@@ -5,5 +5,12 @@
     "database": "app_db_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
+  },
+  "production": {
+    "username": null,
+    "password": null,
+    "database": "app_db_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
   }
 }
