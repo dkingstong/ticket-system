@@ -12,6 +12,7 @@ export default function TicketForm() {
   const [description, setDescription] = useState('')
 
   const handleSubmit = async(event) => {
+    event.preventDefault()
     const body = {
       email,
       firstName,
