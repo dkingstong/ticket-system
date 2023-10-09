@@ -4,6 +4,7 @@ import * as TicketController from '../controllers/ticketController'
 const router = express.Router()
 
 router.post('/', async(req, res) => {
+  console.log('Received new request to add ticket', req.body)
   const ticket = req.body;
   const newTicket = await TicketController.createTicket(ticket)
   return res.status(200).json({ newTicket })

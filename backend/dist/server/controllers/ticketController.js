@@ -15,17 +15,18 @@ var createTicket = exports.createTicket = /*#__PURE__*/function () {
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
+          console.log('Creating new ticket', ticket);
           _getModels = (0, _index.getModels)(), Tickets = _getModels.Tickets, Users = _getModels.Users;
-          _context.next = 3;
+          _context.next = 4;
           return Users.findOne({
             where: {
               email: ticket.email
             }
           });
-        case 3:
+        case 4:
           user = _context.sent;
           if (user) {
-            _context.next = 9;
+            _context.next = 10;
             break;
           }
           newUser = {
@@ -35,22 +36,22 @@ var createTicket = exports.createTicket = /*#__PURE__*/function () {
             hashedPassword: '123456789',
             role: 'user'
           };
-          _context.next = 8;
+          _context.next = 9;
           return Users.create(newUser);
-        case 8:
-          user = _context.sent;
         case 9:
-          _context.next = 11;
+          user = _context.sent;
+        case 10:
+          _context.next = 12;
           return Tickets.create({
             userId: user && user.id,
             description: ticket.description,
             title: ticket.title,
             status: 'NEW'
           });
-        case 11:
+        case 12:
           newTicket = _context.sent;
           return _context.abrupt("return", newTicket);
-        case 13:
+        case 14:
         case "end":
           return _context.stop();
       }

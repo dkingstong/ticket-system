@@ -20,15 +20,16 @@ router.post('/', /*#__PURE__*/function () {
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
+          console.log('Received new request to add ticket', req.body);
           ticket = req.body;
-          _context.next = 3;
+          _context.next = 4;
           return TicketController.createTicket(ticket);
-        case 3:
+        case 4:
           newTicket = _context.sent;
           return _context.abrupt("return", res.status(200).json({
             newTicket: newTicket
           }));
-        case 5:
+        case 6:
         case "end":
           return _context.stop();
       }

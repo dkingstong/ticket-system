@@ -1,6 +1,7 @@
 import { getModels } from '../models/index'
 
 export const createTicket = async (ticket) => {
+  console.log('Creating new ticket', ticket)
   const { Tickets, Users } = getModels()
   let user = await Users.findOne({ where: { email: ticket.email } })
   if(!user) {
