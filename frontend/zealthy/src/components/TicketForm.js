@@ -19,7 +19,9 @@ export default function TicketForm() {
       title,
       description
     }
-    await axios.post('https://ticket-system-production.up.railway.app/tickets', body);
+    console.log('making call to backend')
+    const res = await axios.post('https://ticket-system-production.up.railway.app/tickets', body);
+    console.log('made call to backend with response', res)
   }
   return(
     <React.Fragment>
