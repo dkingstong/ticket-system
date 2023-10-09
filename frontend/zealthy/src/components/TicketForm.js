@@ -12,7 +12,6 @@ export default function TicketForm() {
   const [description, setDescription] = useState('')
 
   const handleSubmit = async(event) => {
-    event.preventDefault()
     const body = {
       email,
       firstName,
@@ -20,9 +19,7 @@ export default function TicketForm() {
       title,
       description
     }
-    console.log('making call to backend')
-    const res = await axios.post('https://ticket-system-production.up.railway.app/tickets', body);
-    console.log('made call to backend with response', res)
+    await axios.post('https://ticket-system-production.up.railway.app/tickets', body);
   }
   return(
     <React.Fragment>
