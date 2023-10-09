@@ -36,7 +36,7 @@ export default function SignIn() {
     const email = data.get('email');
     const password = data.get('password');
     try {
-      const res = axios.post('http://localhost:4000/login', {
+      const res = axios.post('https://ticket-system-production.up.railway.app/login', {
         email,
         password
       })

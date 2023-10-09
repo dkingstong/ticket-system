@@ -19,7 +19,7 @@ export default function TicketForm() {
       title,
       description
     }
-    await axios.post('http://localhost:4000/tickets', body);
+    await axios.post('https://ticket-system-production.up.railway.app/tickets', body);
   }
   return(
     <React.Fragment>

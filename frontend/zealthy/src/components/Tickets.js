@@ -55,13 +55,13 @@ export default function Tickets() {
   useEffect(() => {getTickets()}, [])
 
   const getTickets = async () => {
-    const res = await axios.get('http://localhost:4000/tickets/index')
+    const res = await axios.get('https://ticket-system-production.up.railway.app/tickets/index')
     const { tickets } = res.data
     setTickets([...tickets])
   }
 
   const handleChange = async (event) => {
-    await axios.put(`http://localhost:4000/tickets/${currentTicket.id}`, {status: event.target.value})
+    await axios.put(`https://ticket-system-production.up.railway.app/tickets/${currentTicket.id}`, {status: event.target.value})
     window.location.reload(false);
   }
 
