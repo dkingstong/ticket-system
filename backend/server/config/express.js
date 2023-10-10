@@ -5,7 +5,7 @@ import * as routes from '../routes/index.js'
 
 const app = express();
 app.use(cors({
-  origin: 'https://ticket-system-fe.vercel.app'
+  origin: '*'
 }));
 app.use(bodyParser.json());
 // use passport session
